@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import { v4 as uuidv4 } from 'uuid';
+import path from "path";
 const app = express();
 const port = 3000;
 const articles = [];
