@@ -1,27 +1,23 @@
-// Utilizzo di CommonJS per importare i moduli in un ambiente Node.js con type: module
 import express from "express";
 import bodyParser from "body-parser";
+import { v4 as uuidv4 } from 'uuid';
 import path from "path";
+const app = express();
+const port = 3000;
+const articles = [];
 
-//
 const __dirname = path.resolve();
 
-const app = express();
-const port = process.env.PORT || 3000;
-
-
-// Middleware per gestire dati JSON e URL-encoded
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-// Imposta EJS come motore di rendering
+// Configura il motore di template EJS
+app.set('view engine', 'ejs');
+app.use(express.static("public"));
+// Imposta il motore di visualizzazione su EJS
 app.set('view engine', 'ejs');
 // Imposta la directory delle viste
 app.set('views', path.join(__dirname, 'views'));
-
-// Middleware per servire file statici dalla directory 'public'
-app.use(express.static(path.join(__dirname, 'Public')));
-
-
+app.use(bodyParser.urlencoded({ extended: true }));
+// Imposta EJS come motore di rendering
+app.set('view engine', 'ejs');
 app.get('/about', (req, res) => {
   res.render("about.ejs");
 })
