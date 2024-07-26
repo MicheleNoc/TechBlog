@@ -8,7 +8,10 @@ const articles = [];
 // Configura il motore di template EJS
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
-
+// Imposta il motore di visualizzazione su EJS
+app.set('view engine', 'ejs');
+// Imposta la directory delle viste
+app.set('views', path.join(__dirname, 'views'));
 app.use(bodyParser.urlencoded({ extended: true }));
 // Imposta EJS come motore di rendering
 app.set('view engine', 'ejs');
