@@ -10,7 +10,8 @@ app.set('view engine', 'ejs');
 app.use(express.static("public"));
 
 app.use(bodyParser.urlencoded({ extended: true }));
-
+// Imposta EJS come motore di rendering
+app.set('view engine', 'ejs');
 app.get('/about', (req, res) => {
   res.render("about.ejs");
 })
