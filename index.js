@@ -1,5 +1,4 @@
 // Utilizzo di CommonJS per importare i moduli in un ambiente Node.js con type: module
-import axios from "axios";
 import express from "express";
 import bodyParser from "body-parser";
 import path from "path";
