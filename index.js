@@ -10,13 +10,14 @@ app.set('view engine', 'ejs');
 app.use(express.static("public"));
 
 app.use(bodyParser.urlencoded({ extended: true }));
+
 app.get('/about', (req, res) => {
   res.render("about.ejs");
 })
 
 // Gestisce la richiesta GET alla radice
 app.get('/', (req, res) => {
-  res.render('index', { articles });
+  res.render('index.ejs', { articles });
 });
 
 
