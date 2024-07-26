@@ -7,7 +7,8 @@ const port = 3000;
 const articles = [];
 
 const __dirname = path.resolve();
-
+// Middleware per servire file statici dalla directory 'public'
+app.use(express.static(path.join(__dirname, 'public')));
 // Configura il motore di template EJS
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
